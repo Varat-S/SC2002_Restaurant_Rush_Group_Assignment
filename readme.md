@@ -73,6 +73,7 @@ Tag: [Stage 1](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignmen
 
 ### Stage 2: Customer Behaviour (Addition of VIP and Critic customers)
 Tag: [Stage 2](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/stage-2) Commit: [a45eb39](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/commit/a45eb39)
+Changes: [Stage 1 -> Stage 2](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/compare/stage-1...stage-2)
 
 New files:
 | File | Purpose |
@@ -92,6 +93,7 @@ Deleted files: None.
 
 ### Stage 3: New Role and Menu Policy (Addition of Host, Combo Meals and Happy Hour)
 Tag: [Stage 3](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/stage-3) Commit: [1a6aa09](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/commit/1a6aa09)
+Changes: [Stage 2 -> Stage 3](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/compare/stage-2...stage-3)
 
 New files:
 | File | Purpose |
@@ -221,5 +223,20 @@ Average paid satisfaction: N/A (target 60.0)
 
 Average paid satisfaction is N/A because no customers have paid.
 
-## 5. Video Timestamps 
+## 5. UML Diagrams 
+
+Our UML diagrams document the evolution of the object-oriented design across all three development stages.
+
+### Class Diagrams
+1. [Stage 1:](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/UML-diagrams/stage-1-uml) -- Core restaurant entities, staff inheritance and game architecture.
+2. [Stage 2:](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/UML-diagrams/stage-2-uml) -- Introduction of RegularCustomer, VIPCustomer and CriticCustomer through inheritance and polymorphism.
+3. [Stage 3:](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/UML-diagrams/stage-3-uml) — Introduction of Host, ComboMeal, MenuItem interface and pricing policies.
+
+### Sequence Diagrams
+[Stage 3 Sequence Diagram](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/Sequence%20diagram)
+
+The sequence diagram demonstrates a VIP customer ordering Pasta during Happy Hour, followed by food preparation, serving and payment.
+
+## 6. Video Timestamps 
 [To Be Completed]
+
