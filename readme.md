@@ -89,6 +89,7 @@ Changed files:
 | `Customer.java` | Changed into an abstract superclass with overrideable satisfaction-loss and discount methods, allowing different customer behaviour while sharing the same service flow. |
 | `Order.java` | Applies the customer-specific discount when the order is created so that the bill is not accidentally altered. |
 | `GameController.java` | Creates Regular, VIP and Critic customers at scheduled arrivals while preserving the existing order and service flow. |
+| `GameUI.java` | Updated the console interface to identify Regular, VIP and Critic customers in the waiting queue, tables, action menus and game messages, and display the final bill for each order. |
 
 Deleted files: None.
 
@@ -177,8 +178,9 @@ Average paid satisfaction: 74.3 (target 60.0)
 Follow these rules when running Stage 3 to achieve victory:
 
 Happy Hour: 
-1. Answer n on turns 1 through 7.
-2. Answer y at the start of turn 8 such that Happy Hour is active during turns 8 and 9.
+1. Answer n on turns 1 through 3.
+2. Answer y at the start of turn 4 such that Happy Hour is active during turns 4 and 5.
+3. Answer n for the rest of the turns. 
 
 Host:
 Seating happens automatically; no player input is required.
@@ -198,8 +200,8 @@ Expected final output:
 ```
 === VICTORY ===
 Paid customers: 5 (target 4)
-Revenue: $94.80 (target $45.00)
-Average paid satisfaction: 82.0 (target 60.0)
+Revenue: $91.56 (target $45.00)
+Average paid satisfaction: 79.8 (target 60.0)
 ```
 
 
