@@ -216,15 +216,19 @@ public class GameController {
             if (arrivalTurn == turn) {
                 int customerId = restaurant.getCustomers().length + 1;
                 Customer c;
+                String customerType;
                 if (turn == 4) {
                     c = new VIPCustomer(customerId);
+                    customerType = "VIP";
                 } else if (turn == 10) {
                     c = new CriticCustomer(customerId);
+                    customerType = "Critic";
                 } else {
                     c = new RegularCustomer(customerId);
+                    customerType = "Regular";
                 }
                 restaurant.addCustomer(c);
-                ui.showMessage("Customer " + customerId + " arrived.");
+                ui.showMessage("Customer " + customerId + " (" + customerType + ") arrived.");
                 return;
             }
         }

@@ -1,6 +1,8 @@
 package boundary;
 
 import entity.Customer;
+import entity.CriticCustomer;
+import entity.VIPCustomer;
 import entity.GameResult;
 import entity.Order;
 import entity.Restaurant;
@@ -12,12 +14,14 @@ import java.util.Scanner;
 
 public class GameUI {
     private final Scanner input;
+    private Restaurant restaurant;
 
     public GameUI() {
         input = new Scanner(System.in);
     }
 
     public void showTurnStart(int turn, Restaurant restaurant) {
+        this.restaurant = restaurant;
         System.out.println();
         System.out.println("=== Turn " + turn + " ===");
         System.out.println("Revenue: " + formatCents(restaurant.getRevenueCents()));
@@ -30,8 +34,8 @@ public class GameUI {
             if (c == null) {
                 System.out.println("  Table " + t.getTableId() + ": free");
             } else {
-                System.out.println("  Table " + t.getTableId() + ": customer "
-                        + c.getCustomerId() + " (" + c.getState() + ")");
+                System.out.println("  Table " + t.getTableId() + ": "
+                        + customerLabel(c) + " (" + c.getState() + ")");
             }
         }
 
@@ -53,7 +57,7 @@ public class GameUI {
         System.out.println();
         System.out.println("Waiter - choose one task:");
         for (int i = 0; i < options.length; i++) {
-            System.out.println("  " + i + ") " + options[i]);
+            System.out.println("  " + i + ") " + labelCustomers(options[i]));
         }
     }
 
@@ -61,7 +65,7 @@ public class GameUI {
         System.out.println();
         System.out.println("Chef - choose one task:");
         for (int i = 0; i < options.length; i++) {
-            System.out.println("  " + i + ") " + options[i]);
+            System.out.println("  " + i + ") " + labelCustomers(options[i]));
         }
     }
 
@@ -79,7 +83,7 @@ public class GameUI {
     }
 
     public void showMessage(String message) {
-        System.out.println(message);
+        System.out.println(labelCustomers(message));
     }
 
     public void showEndOfTurn(int turn, Restaurant restaurant) {
@@ -105,8 +109,36 @@ public class GameUI {
                 (double) targetAverageSatisfaction) + ")");
     }
 
+    private String customerLabel(Customer c) {
+        String type = "Regular";
+        if (c instanceof VIPCustomer) {
+            type = "VIP";
+        } else if (c instanceof CriticCustomer) {
+            type = "Critic";
+        }
+        return "customer " + c.getCustomerId() + " (" + type + ")";
+    }
+
+    private String labelCustomers(String text) {
+        if (restaurant == null) {
+            return text;
+        }
+        for (Customer c : restaurant.getCustomers()) {
+            String label = customerLabel(c);
+            String plain = "customer " + c.getCustomerId();
+            if (!text.contains(label)) {
+                text = text.replace(plain, label);
+            }
+            String capitalLabel = "C" + label.substring(1);
+            if (!text.contains(capitalLabel)) {
+                text = text.replace("Customer " + c.getCustomerId(), capitalLabel);
+            }
+        }
+        return text;
+    }
+
     private String describeCustomer(Customer c) {
-        String text = "customer " + c.getCustomerId()
+        String text = customerLabel(c)
                 + ": satisfaction " + c.getSatisfaction()
                 + ", " + c.getState();
         Order o = c.getOrder();
@@ -114,7 +146,8 @@ public class GameUI {
             return text + ", no order";
         }
         return text + ", order " + o.getItem().getName() + " " + o.getStatus()
-                + " (" + o.getRemainingPrepUnits() + " unit(s) left)";
+                + " (" + o.getRemainingPrepUnits() + " unit(s) left, bill "
+                + formatCents(o.getPriceCents()) + ")";
     }
 
     private String waitingQueueText(Restaurant restaurant) {
@@ -127,7 +160,7 @@ public class GameUI {
             if (i > 0) {
                 text.append(", ");
             }
-            text.append("customer ").append(waiting[i].getCustomerId());
+            text.append(customerLabel(waiting[i]));
         }
         return text.toString();
     }
