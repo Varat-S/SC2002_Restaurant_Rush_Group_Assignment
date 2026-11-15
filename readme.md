@@ -242,5 +242,15 @@ Our UML diagrams document the evolution of the object-oriented design across all
 The sequence diagram demonstrates a VIP customer ordering Pasta during Happy Hour, followed by food preparation, serving and payment.
 
 ## 6. Video Timestamps 
-[To Be Completed]
 
+| Segment | Timestamp |
+| ---- | ---- | 
+| `Introduction` | 0:00 - 0:40 |
+| `Three Stage Overview` | 0:40 - 1:13 |
+| `Launch and Gameplay` | 1:13 - 2:55  |
+| `Stage 1 UML` | 4:02 - 5:27 |
+| `Stage 2 UML` | 5:27 - 6:56 |
+| `Stage 3 UML` | 6:56 - 9:13 |
+| `Sequence Diagrams` | 9:13 - 12:02 |
+| `Reflections` | 12:02 - 13:02 |
+| `Conclusion` | 13:02 - 13:28  |
