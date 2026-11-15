@@ -180,7 +180,7 @@ Follow these rules when running Stage 3 to achieve victory:
 Happy Hour: 
 1. Answer n on turns 1 through 3.
 2. Answer y at the start of turn 4 such that Happy Hour is active during turns 4 and 5.
-3. Answer n for the rest of the turns. 
+3. After activation, no further HappyHour input is required. Continue choosing Waiter and Chef actions. 
 
 Host:
 Seating happens automatically; no player input is required.
