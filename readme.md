@@ -237,7 +237,7 @@ Our UML diagrams document the evolution of the object-oriented design across all
 3. [Stage 3:](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/UML-diagrams/stage-3-uml) — Introduction of Host, ComboMeal, MenuItem interface and pricing policies.
 
 ### Sequence Diagram
-[Stage 3 Sequence Diagram](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/tree/main/Sequence%20diagram)
+[Stage 3 Sequence Diagram](https://github.com/Varat-S/SC2002_Restaurant_Rush_Group_Assignment/blob/main/UML%20sequence%20diagram/Sequence%20Diagram.svg)
 
 The sequence diagram demonstrates a VIP customer ordering Pasta during Happy Hour, followed by food preparation, serving and payment.
 
